@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KBS - Kumawat Bank Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="logo">🏦</span>
+      <div>
+        <h2>KBS Secure</h2>
+        <small>Kumawat Bank Services</small>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#offerings">Offerings</a>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">Next-Gen Retail Banking Platform</span>
+      <h1>Welcome to KBS</h1>
+      <p>Your Trusted Banking Partner. Experience seamless account management, instant money transfers, real-time balance tracking, and 24/7 financial control.</p>
+      <div class="hero-btns">
+        <a href="#dashboard" class="btn btn-primary">Get Started →</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
+    </div>
+
+    <!-- Vault Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>₹9,99,99,99,90,00,00,0</h3>
+        <p>Total Vault Reserve</p>
+      </div>
+      <div class="stat-card">
+        <h3>99.9%</h3>
+        <p>Service Uptime</p>
+      </div>
+      <div class="stat-card">
+        <h3>256-bit</h3>
+        <p>Encrypted Security</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Who We Are -->
+  <section id="about" class="section">
+    <div class="section-title">
+      <small>WHO WE ARE</small>
+      <h2>About KBS Banking System</h2>
+    </div>
+    <p class="about-desc">
+      KBS (Kumawat Bank Services) is a modern banking management project engineered to streamline customer transactions with maximum speed and reliability.
+    </p>
+    <div class="features-grid">
+      <div class="feat-box">
+        <h4>⚡ Instant Account Creation</h4>
+        <p>Zero physical paperwork required</p>
+      </div>
+      <div class="feat-box">
+        <h4>📊 Transparent Audit Log</h4>
+        <p>Track every deposit & payout</p>
+      </div>
+      <div class="feat-box">
+        <h4>🛡️ Safe & Reliable Financial Tech</h4>
+        <p>Empowering individuals and business owners</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings Section -->
+  <section id="offerings" class="section bg-light">
+    <div class="section-title">
+      <small>OUR OFFERINGS</small>
+      <h2>Core Banking Services</h2>
+      <p>Everything you need to manage your day-to-day financial operations seamlessly.</p>
+    </div>
+
+    <div class="offerings-grid">
+      <div class="offer-card" onclick="openOperation('new-account')">
+        <div class="icon">+</div>
+        <h3>New Account</h3>
+        <p>Open a fresh banking account in under 2 minutes with basic customer info.</p>
+        <span class="link-btn">Open Now →</span>
+      </div>
+      <div class="offer-card" onclick="openOperation('balance-check')">
+        <div class="icon">🔍</div>
+        <h3>Balance Check</h3>
+        <p>Check real-time account available balance anytime securely.</p>
+        <span class="link-btn">Check Balance →</span>
+      </div>
+      <div class="offer-card" onclick="openOperation('deposit')">
+        <div class="icon">↓</div>
+        <h3>Deposit</h3>
+        <p>Credit cash or electronic funds straight into any registered account.</p>
+        <span class="link-btn">Deposit Cash →</span>
+      </div>
+      <div class="offer-card" onclick="openOperation('withdraw')">
+        <div class="icon">↑</div>
+        <h3>Withdraw</h3>
+        <p>Safe cash withdrawals with automatic overdraft checks to safeguard account standing.</p>
+        <span class="link-btn">Withdraw Cash →</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Dashboard Operations -->
+  <section id="dashboard" class="section">
+    <div class="section-title">
+      <h2>Bank Dashboard</h2>
+      <p>Select an operation below to execute customer banking actions.</p>
+    </div>
+
+    <div class="ops-nav">
+      <button class="op-tab active" onclick="switchTab('new-account')">+ New Account</button>
+      <button class="op-tab" onclick="switchTab('balance-check')">Balance Check</button>
+      <button class="op-tab" onclick="switchTab('deposit')">Deposit Money</button>
+      <button class="op-tab" onclick="switchTab('withdraw')">Withdraw Money</button>
+      <button class="op-tab" onclick="switchTab('directory')">View Accounts Directory</button>
+    </div>
+
+    <!-- Forms Container -->
+    <div class="form-card">
+      
+      <!-- New Account Form -->
+      <form id="form-new-account" class="op-form active" onsubmit="createNewAccount(event)">
+        <h3>Open New Bank Account</h3>
+        <div class="form-grid">
+          <div class="input-field">
+            <label>Customer Full Name *</label>
+            <input type="text" id="new-name" placeholder="e.g. Ravikant" required>
+          </div>
+          <div class="input-field">
+            <label>Father's Name *</label>
+            <input type="text" id="new-father" placeholder="e.g. Indraj" required>
+          </div>
+          <div class="input-field">
+            <label>Mobile Number *</label>
+            <input type="tel" id="new-mobile" placeholder="e.g. 6367434926" required>
+          </div>
+          <div class="input-field">
+            <label>City / Address *</label>
+            <input type="text" id="new-address" placeholder="e.g. Sri Ganganagar" required>
+          </div>
+          <div class="input-field">
+            <label>Opening Deposit (₹) *</label>
+            <input type="number" id="new-deposit" placeholder="e.g. 2000" min="500" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Account</button>
+      </form>
+
+      <!-- Balance Check Form -->
+      <form id="form-balance-check" class="op-form" onsubmit="checkBalance(event)">
+        <h3>Check Account Balance</h3>
+        <div class="input-field">
+          <label>Account Number *</label>
+          <input type="text" id="check-acc-num" placeholder="e.g. 1001001003" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Check Balance</button>
+      </form>
+
+      <!-- Deposit Form -->
+      <form id="form-deposit" class="op-form" onsubmit="processDeposit(event)">
+        <h3>Deposit Money</h3>
+        <div class="form-grid">
+          <div class="input-field">
+            <label>Account Number *</label>
+            <input type="text" id="dep-acc-num" placeholder="e.g. 1001001003" required>
+          </div>
+          <div class="input-field">
+            <label>Amount to Deposit (₹) *</label>
+            <input type="number" id="dep-amount" placeholder="e.g. 1000" min="1" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Deposit Funds</button>
+      </form>
+
+      <!-- Withdraw Form -->
+      <form id="form-withdraw" class="op-form" onsubmit="processWithdraw(event)">
+        <h3>Withdraw Money</h3>
+        <div class="form-grid">
+          <div class="input-field">
+            <label>Account Number *</label>
+            <input type="text" id="wit-acc-num" placeholder="e.g. 1001001003" required>
+          </div>
+          <div class="input-field">
+            <label>Amount to Withdraw (₹) *</label>
+            <input type="number" id="wit-amount" placeholder="e.g. 500" min="1" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger">Withdraw Funds</button>
+      </form>
+
+      <!-- Accounts Directory -->
+      <div id="form-directory" class="op-form">
+        <h3>Accounts Directory</h3>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>A/C Number</th>
+                <th>Holder Name</th>
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Current Balance</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="directory-table-body">
+              <!-- Dynamic Rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Account Details & Statement Section -->
+  <section class="section bg-light">
+    <div class="section-title">
+      <small>ACCOUNT DETAILS</small>
+      <h2>Account Profile & Statement</h2>
+      <p>Inspect full customer profile and historical transaction logs.</p>
+    </div>
+
+    <!-- Account Lookup Box -->
+    <div class="search-box">
+      <div class="input-field">
+        <label>Enter Account Number *</label>
+        <div class="search-flex">
+          <input type="text" id="search-acc-input" value="1001001003" placeholder="Enter A/C Number">
+          <button class="btn btn-primary" onclick="loadAccountDetails()">🔍 Search</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Profile Card -->
+    <div class="profile-card" id="profileCard">
+      <div class="profile-grid">
+        <div class="profile-item">
+          <span class="p-label">ACCOUNT HOLDER</span>
+          <span class="p-value" id="profile-holder">ravikant</span>
+        </div>
+        <div class="profile-item">
+          <span class="p-label">ACCOUNT NUMBER</span>
+          <span class="p-value highlight" id="profile-acc">1001001003</span>
+        </div>
+        <div class="profile-item">
+          <span class="p-label">FATHER'S NAME</span>
+          <span class="p-value" id="profile-father">indraj</span>
+        </div>
+        <div class="profile-item">
+          <span class="p-label">MOBILE NUMBER</span>
+          <span class="p-value" id="profile-mobile">6367434926</span>
+        </div>
+        <div class="profile-item">
+          <span class="p-label">CITY / ADDRESS</span>
+          <span class="p-value" id="profile-address">ganganagar</span>
+        </div>
+        <div class="profile-item">
+          <span class="p-label">ACCOUNT CREATED</span>
+          <span class="p-value" id="profile-date">1/8/2026 05:19 pm</span>
+        </div>
+        <div class="profile-item full-width">
+          <span class="p-label">CURRENT BALANCE</span>
+          <span class="p-value balance" id="profile-balance">₹2,000</span>
+        </div>
+      </div>
+
+      <!-- Transaction Ledger Table -->
+      <div class="ledger-container">
+        <h3>Recent Transaction Ledger</h3>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>REF</th>
+                <th>DATE & TIME</th>
+                <th>TYPE</th>
+                <th>AMOUNT</th>
+                <th>BALANCE AFTER</th>
+              </tr>
+            </thead>
+            <tbody id="ledger-table-body">
+              <!-- Dynamic Transaction Rows -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-top">
+      <div class="section-title light">
+        <small>REACH OUT</small>
+        <h2>Contact KBS Support</h2>
+        <p>Have queries or need assistance? Our support desk is at your service.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>📧 Email Support</h4>
+          <p>support@kbsbank.com</p>
+        </div>
+        <div class="contact-card">
+          <h4>📞 Phone Helpline</h4>
+          <p>+91-6367434926 (Toll-Free 24/7)</p>
+        </div>
+        <div class="contact-card">
+          <h4>🏢 Headquarters Address</h4>
+          <p>Sri Ganganagar, Rajasthan, India</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Kumawat Bank Services (KBS). All Rights Reserved. Designed for modern online banking management.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
